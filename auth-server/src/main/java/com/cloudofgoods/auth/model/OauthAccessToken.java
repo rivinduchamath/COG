@@ -3,6 +3,8 @@ package com.cloudofgoods.auth.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.type.BlobType;
+import org.hibernate.type.descriptor.sql.LobTypeMappings;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -16,7 +18,8 @@ public class OauthAccessToken implements SuperEntity {
     @Id
     @Column(name = "token_id")
     private String tokenId;
-    @Column(name = "token")
+    @Column(name = "token",columnDefinition = "MEDIUMBLOB")
+    @Lob
     private Long token;
     @Column(name = "authentication_id")
     private String authenticationId;
@@ -24,7 +27,8 @@ public class OauthAccessToken implements SuperEntity {
     private String userName;
     @Column(name = "client_id")
     private String clientId;
-    @Column(name = "authentication")
+    @Column(name = "authentication",columnDefinition = "MEDIUMBLOB")
+    @Lob
     private Long authentication;
     @Column(name = "refresh_token")
     private String refreshToken;

@@ -16,7 +16,8 @@ public class OauthClientToken implements SuperEntity {
     @Id
     @Column(name = "token_id")
     private String tokenId;
-    @Column(name = "token")
+    @Column(name = "token",columnDefinition = "MEDIUMBLOB")
+    @Lob
     private Long token;
     @Column(name = "authentication_id")
     private String authenticationId;
