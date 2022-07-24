@@ -50,13 +50,14 @@
 * Port Number = http://localhost:9191/oauth/token
  
 > output 
-> > {
-"access_token": "b61e9a7d-0827-4f6e-9b34-c193dcc6451c",
-"token_type": "bearer",
-"refresh_token": "cd299608-9b1c-4958-b9bb-0ee39aad63f6",
-"expires_in": 3599,
-"scope": "READ WRITE"
-}
+> 
+        {
+            "access_token": "b61e9a7d-0827-4f6e-9b34-c193dcc6451c",
+            "token_type": "bearer",
+            "refresh_token": "cd299608-9b1c-4958-b9bb-0ee39aad63f6",
+            "expires_in": 3599,
+            "scope": "READ WRITE"
+        }
 
 
 ---------------
@@ -64,28 +65,33 @@
 > Method Get (get Auth User Details From Auth Service)
 1. On URL
 * Port Number = http://localhost:9191/oauth/check_token?token=b61e9a7d-0827-4f6e-9b34-c193dcc6451c
-> output
-> > {
-"aud": [
-"inventory",
-"payment"
-],
-"user_name": "chamath",
-"scope": [
-"READ",
-"WRITE"
-],
-"active": true,
-"exp": 1658674474,
-"authorities": [
-"ROLE_admin",
-"delete_profile",
-"update_profile",
-"read_profile",
-"create_profile"
-],
-"client_id": "mobile"
-}
+> Input Jason
+
+            {
+            "aud": [
+                "inventory",
+                "payment"
+                ],
+            "user_name": "chamath",
+            "scope": [
+                    "READ",
+                    "WRITE"
+                ],
+            "active": true,
+            "exp": 1658674474,
+            "authorities": [
+            "ROLE_admin",
+            "delete_profile",
+            "update_profile",
+            "read_profile",
+            "create_profile"
+        ],
+    "client_id": "mobile"
+    }
+
+
+
+
 
 
 ---------------
@@ -95,38 +101,39 @@
 * Authorization  :  bearer b61e9a7d-0827-4f6e-9b34-c193dcc6451c
 
 
-> output
-> > [
-{
-"id": 1,
-"username": "chamath",
-"password": "{bcrypt}$2a$12$v7BWLKlyF5H1k8NBYBvBI.C5SBziVSRZDpmW/6Es9kGpxe3l.dbKu",
-"enabled": true,
-"accountNonExpired": true,
-"credentialsNonExpired": true,
-"accountNonLocked": true,
-"roles": [
-{
-"id": 1,
-"name": "ROLE_admin",
-"permissions": [
-{
-"id": 1,
-"name": "create_profile"
-},
-{
-"id": 2,
-"name": "read_profile"
-},
-{
-"id": 3,
-"name": "update_profile"
-},
-{
-"id": 4,
-"name": "delete_profile"
-}
-]
+> output 
+> 
+       [
+        {
+        "id": 1,
+        "username": "chamath",
+        "password": "{bcrypt}$2a$12$v7BWLKlyF5H1k8NBYBvBI.C5SBziVSRZDpmW/6Es9kGpxe3l.dbKu",
+        "enabled": true,
+        "accountNonExpired": true,
+        "credentialsNonExpired": true,
+        "accountNonLocked": true,
+        "roles": [
+            {
+            "id": 1,
+            "name": "ROLE_admin",
+            "permissions": [
+            {
+            "id": 1,
+            "name": "create_profile"
+            },
+            {
+            "id": 2,
+            "name": "read_profile"
+            },
+            {
+            "id": 3,
+            "name": "update_profile"
+            },
+            {
+            "id": 4,
+            "name": "delete_profile"
+            }
+        ]
 
 > Method Post (save User)
 
@@ -138,39 +145,41 @@
 * Port Number = http://localhost:8284/services/customer
 
 > Input Jason
-> > 	{
-		"id": 54545,
-		"username": "chamathG",
-		"password": "{bcrypt}$2a$12$v7BWLKlyF5H1k8NBYBvBI.C5SBziVSRZDpmW/6Es9kGpxe3l.dbKu",
-		"enabled": true,
-		"accountNonExpired": true,
-		"credentialsNonExpired": true,
-		"accountNonLocked": true,
-		"roles": [
-			{
-				"id": 1,
-				"name": "ROLE_admin",
-				"permissions": [
-					{
-						"id": 1,
-						"name": "create_profile"
-					},
-					{
-						"id": 2,
-						"name": "read_profile"
-					},
-					{
-						"id": 3,
-						"name": "update_profile"
-					},
-					{
-						"id": 4,
-						"name": "delete_profile"
-					}
-				]
-			}
-		]
-	}
+> > 
+
+    {
+            "id": 54545,
+            "username": "chamathG",
+            "password": "{bcrypt}$2a$12$v7BWLKlyF5H1k8NBYBvBI.C5SBziVSRZDpmW/6Es9kGpxe3l.dbKu",
+            "enabled": true,
+            "accountNonExpired": true,
+            "credentialsNonExpired": true,
+            "accountNonLocked": true,
+            "roles": [
+                {
+                    "id": 1,
+                    "name": "ROLE_admin",
+                    "permissions": [
+                        {
+                            "id": 1,
+                            "name": "create_profile"
+                        },
+                        {
+                            "id": 2,
+                            "name": "read_profile"
+                        },
+                        {
+                            "id": 3,
+                            "name": "update_profile"
+                        },
+                        {
+                            "id": 4,
+                            "name": "delete_profile"
+                        }
+                    ]
+                }
+            ]
+        }
 
 
 
