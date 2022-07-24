@@ -7,15 +7,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ui-test" />
-        <module name="auth-server" />
         <module name="user-service" />
+        <module name="ui-test" />
+        <module name="customer-save" />
+        <module name="auth-server" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="auth-server" options="-parameters" />
+      <module name="customer-save" options="-parameters" />
       <module name="ui-test" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>

@@ -30,3 +30,4 @@ security:
     client:
       client-id: mobile
       client-secret: 1234
+

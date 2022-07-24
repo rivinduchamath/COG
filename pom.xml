@@ -11,6 +11,7 @@
     <modules>
         <module>auth-server</module>
         <module>user-service</module>
+        <module>customer-save</module>
     </modules>
     <dependencies>
         <dependency>

@@ -11,6 +11,9 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
 
 import javax.sql.DataSource;
 
@@ -28,16 +31,26 @@ public class AuthorizationConfiguration implements AuthorizationServerConfigurer
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer authorizationServerSecurityConfigurer) throws Exception {
+
+        System.out.println("TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
+
         authorizationServerSecurityConfigurer.checkTokenAccess("isAuthenticated()").tokenKeyAccess("permitAll()");
+      // oauthServer.realm("sparklr2/client");
+      //  authorizationServerSecurityConfigurer.allowFormAuthenticationForClients();
+//        authorizationServerSecurityConfigurer.tokenKeyAccess("isAnonymous()");
+
+
     }
+
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clientDetailsServiceConfigurer) throws Exception {
+        System.out.println("RRRRRRRRRRRRRRRRRRRRRRRRRRRRR");
         clientDetailsServiceConfigurer.jdbc(dataSource).passwordEncoder(passwordEncoder);
     }
-
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer authorizationServerEndpointsConfigurer) throws Exception {
+        System.out.println("YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY");
         authorizationServerEndpointsConfigurer.tokenStore(jdbcTokenStore());
         authorizationServerEndpointsConfigurer.authenticationManager(authenticationManager);
     }
