@@ -20,14 +20,12 @@ public class UsersController {
 
     @RequestMapping(value = "/profile", method = RequestMethod.POST)
     public User save(@RequestBody User users) {
-        System.out.println("aaaaaaaaaaaaaaaaa1111111111111111111111111");
         return customerService.save(users);
     }
 
     @RequestMapping(value = "/customer", method = RequestMethod.POST)
 //    @PreAuthorize("hasAnyAuthority('') and hasAnyRole('')")
     public User saveCustomer(@RequestBody User users) {
-        System.out.println("aaaaaaaaaaaaaaaaa");
         return customerService.save(users);
     }
 
