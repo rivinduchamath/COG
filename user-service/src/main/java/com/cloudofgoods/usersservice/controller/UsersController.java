@@ -20,21 +20,19 @@ public class UsersController {
     @RequestMapping(value = "/profile", method = RequestMethod.POST)
     @PreAuthorize("hasAuthority('create_profile')")
     public User save(@RequestBody User users) {
-        System.out.println("aaaaaaaaaaaaaaaaa1111111111111111111111111");
         return customerService.save(users);
     }
 
     @RequestMapping(value = "/customer", method = RequestMethod.POST)
 //    @PreAuthorize("hasAnyAuthority('') and hasAnyRole('')")
     public User saveCustomer(@RequestBody User users) {
-        System.out.println("aaaaaaaaaaaaaaaaa");
         return customerService.save(users);
     }
 
 
-    @RequestMapping(value = "/profile", method = RequestMethod.GET)
+    @RequestMapping(value = "/profile/{id}", method = RequestMethod.GET)
     @PreAuthorize("hasAuthority('read_profile')")
-    public User fetch(@RequestParam Long profileId) {
+    public User fetch(@PathVariable(value ="id") Long profileId) {
         return customerService.fetchById(profileId);
     }
 
