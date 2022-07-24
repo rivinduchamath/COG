@@ -1,7 +1,7 @@
 package com.cloudofgoods.usersservice.service;
 
 
-import com.cloudofgoods.usersservice.model.Users;
+import com.cloudofgoods.usersservice.model.User;
 import com.cloudofgoods.usersservice.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,13 +16,13 @@ public class UsersServiceImpl implements UsersService {
     UsersRepository usersRepository;
 
     @Override
-    public Users save(Users customer) {
+    public User save(User customer) {
         return usersRepository.save(customer);
     }
 
     @Override
-    public Users fetchById(int profileId) {
-        Optional<Users> customer = usersRepository.findById(profileId);
+    public User fetchById(Long profileId) {
+        Optional<User> customer = usersRepository.findById(profileId);
         if (customer.isPresent()) {
             return customer.get();
         } else {
@@ -31,7 +31,7 @@ public class UsersServiceImpl implements UsersService {
     }
 
     @Override
-    public List<Users> fetchAllProfiles() {
+    public List<User> fetchAllProfiles() {
         return usersRepository.findAll();
     }
 }

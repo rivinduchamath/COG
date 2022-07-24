@@ -1,6 +1,6 @@
 package com.cloudofgoods.usersservice.service;
 
-import com.cloudofgoods.usersservice.model.Users;
+import com.cloudofgoods.usersservice.model.User;
 
 
 import java.util.List;
@@ -8,9 +8,9 @@ import java.util.List;
 public interface UsersService {
 
 
-    Users save(Users customer);
+    User save(User customer);
 
-    Users fetchById(int profileId);
+    User fetchById(Long profileId);
 
-    List<Users> fetchAllProfiles();
+    List<User> fetchAllProfiles();
 }

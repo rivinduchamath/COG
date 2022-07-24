@@ -15,7 +15,7 @@ spring:
     hibernate:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
         show_sql: true
@@ -26,7 +26,7 @@ spring:
 security:
   oauth2:
     resource:
-      token-info-uri: http://localhost:8282/oauth/check_token
+      token-info-uri: http://localhost:9191/oauth/check_token
     client:
       client-id: mobile
       client-secret: 1234

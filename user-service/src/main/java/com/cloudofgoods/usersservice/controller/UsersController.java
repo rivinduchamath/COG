@@ -1,7 +1,7 @@
 package com.cloudofgoods.usersservice.controller;
 
 
-import com.cloudofgoods.usersservice.model.Users;
+import com.cloudofgoods.usersservice.model.User;
 import com.cloudofgoods.usersservice.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -19,19 +19,19 @@ public class UsersController {
 
     @RequestMapping(value = "/profile", method = RequestMethod.POST)
     @PreAuthorize("hasAuthority('create_profile')")
-    public Users save(@RequestBody Users users) {
+    public User save(@RequestBody User users) {
         return customerService.save(users);
     }
 
     @RequestMapping(value = "/profile", method = RequestMethod.GET)
     @PreAuthorize("hasAuthority('read_profile')")
-    public Users fetch(@RequestParam int profileId) {
+    public User fetch(@RequestParam Long profileId) {
         return customerService.fetchById(profileId);
     }
 
     @RequestMapping(value = "/profiles", method = RequestMethod.GET)
-    @PreAuthorize("hasRole('ROLE_operator')")
-    public List<Users> fetch() {
+    @PreAuthorize("hasRole('ROLE_admin')")
+    public List<User> fetch() {
         return customerService.fetchAllProfiles();
     }
 }

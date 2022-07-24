@@ -1,19 +1,19 @@
-package com.cloudofgoods.auth.model;
+package com.cloudofgoods.usersservice.model;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Table(name = "user" )
-@Data
+@Table(name = "user")
 @AllArgsConstructor
 @NoArgsConstructor
-public class User implements SuperEntity {
+@Data
+public class User implements SuperEntity{
 
     @Id
 //    @GeneratedValue(strategy = GenerationType.AUTO)
@@ -46,4 +46,5 @@ public class User implements SuperEntity {
         this.accountNonLocked = user.isAccountNonLocked();
         this.roles = user.getRoles();
     }
+
 }
