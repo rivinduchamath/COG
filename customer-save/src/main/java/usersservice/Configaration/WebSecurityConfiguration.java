@@ -33,7 +33,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         System.out.println("RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR");
         web.ignoring().antMatchers("/services/customer");
     }
-    @Override
+   /* @Override
     protected void configure(HttpSecurity http) throws Exception {
         System.out.println("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
         http.csrf().disable();
@@ -48,6 +48,14 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 //                .and()
 //                .cors()
 //                .configurationSource(corsConfigurationSource());
+    }*/
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+
+        http.authorizeRequests()
+                .antMatchers("/customer","/")
+                .permitAll();
     }
 //    CorsConfigurationSource corsConfigurationSource() {
 //        CorsConfiguration configuration = new CorsConfiguration();
