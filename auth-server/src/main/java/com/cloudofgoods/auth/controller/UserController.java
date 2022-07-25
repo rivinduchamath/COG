@@ -1,13 +1,12 @@
 package com.cloudofgoods.auth.controller;
 
 
-import com.cloudofgoods.auth.model.User;
+import com.cloudofgoods.auth.entity.User;
 import com.cloudofgoods.auth.model.request.UserRegister;
 import com.cloudofgoods.auth.service.UserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;

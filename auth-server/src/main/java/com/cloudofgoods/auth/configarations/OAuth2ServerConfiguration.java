@@ -41,9 +41,6 @@ public class OAuth2ServerConfiguration {
             http.authorizeRequests()
                     .antMatchers("/registration/**").permitAll()
                     .anyRequest().fullyAuthenticated();
-
-//                    .antMatchers("/registration").access("#oauth2.hasScope('READ') or hasRole('ROLE_USER')")
-//                    .antMatchers("/greeting").fullyAuthenticated();
         }
 
 
@@ -69,7 +66,7 @@ public class OAuth2ServerConfiguration {
         }
 
         @Override
-        public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+        public void configure(AuthorizationServerEndpointsConfigurer endpoints)  {
             endpoints
                     // Here you can override the default endpoints mappings
                     .pathMapping("/oauth/check_token", "/api/v1/authorize")
@@ -82,7 +79,7 @@ public class OAuth2ServerConfiguration {
 
 
         @Override
-        public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+        public void configure(AuthorizationServerSecurityConfigurer security)  {
             security.checkTokenAccess("isAuthenticated()").tokenKeyAccess("permitAll()");
         }
 
@@ -99,7 +96,6 @@ public class OAuth2ServerConfiguration {
             tokenServices.setTokenStore(tokenStore());
             return tokenServices;
         }
-
 
     }
 

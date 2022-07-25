@@ -1,6 +1,6 @@
 package com.cloudofgoods.auth.dao;
 
-import com.cloudofgoods.auth.model.User;
+import com.cloudofgoods.auth.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

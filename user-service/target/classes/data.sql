@@ -8,6 +8,4 @@
 #                                       (6,155,'Sunila','Jagoda',54422);
 #
 #
-# UPDATE hibernate_sequence
-# SET next_val = 7
-# where next_val = 1;
+

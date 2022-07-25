@@ -1,6 +1,6 @@
 package com.cloudofgoods.auth.service;
 
-import com.cloudofgoods.auth.model.User;
+import com.cloudofgoods.auth.entity.User;
 
 public interface UserDetailService {
 

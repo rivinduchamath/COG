@@ -1,12 +1,12 @@
-package com.cloudofgoods.auth.repository;
-
-
-import com.cloudofgoods.auth.model.User;
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.Optional;
-
-//public interface UserDetailRepository extends JpaRepository<User,Integer> {
-//    Optional<User> findByUsername(String name);
+//package com.cloudofgoods.auth.repository;
+//
+//
+//import com.cloudofgoods.auth.entity.User;
+//import org.springframework.data.jpa.repository.JpaRepository;
+//
+//import java.util.Optional;
+//
+//public interface UserDetailRepository extends JpaRepository<User,Long> {
+//   // Optional<User> findByUsername(String name);
 //
 //}

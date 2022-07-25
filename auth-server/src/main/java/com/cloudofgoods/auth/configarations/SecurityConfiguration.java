@@ -24,18 +24,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         //configure your path here
-        //I purposly configured GET user to
-        // permit all to see diference
-        //for example
-        // @formatter:off
-        http
-//                .authorizeRequests()
-//                .antMatchers(HttpMethod.GET,"/user")
-//                .permitAll()
-//                .antMatchers("/greeting")
-//                .fullyAuthenticated().and()
-                .csrf().disable();
-        // @formatter:on
+        http.csrf().disable();
     }
 
     @Bean
