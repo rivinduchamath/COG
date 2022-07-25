@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
 @Entity
@@ -16,7 +15,7 @@ import java.util.List;
 public class User implements SuperEntity {
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column(name = "email")
     private String username;
@@ -45,5 +44,8 @@ public class User implements SuperEntity {
         this.credentialsNonExpired = user.isCredentialsNonExpired();
         this.accountNonLocked = user.isAccountNonLocked();
         this.roles = user.getRoles();
+    }
+    public void setRoles(Role roles) {
+        this.roles.add(roles);
     }
 }

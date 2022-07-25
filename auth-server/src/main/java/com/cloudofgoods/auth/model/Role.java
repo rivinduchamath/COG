@@ -16,10 +16,12 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Role implements SuperEntity {
-
+    public static final int ROLE_user  = 3;
+    public static final int ROLE_admin  = 1;
+    public static final int ROLE_operator  = 2;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Integer id;
     @Column(name = "name")
     private String name;
     @ManyToMany(fetch = FetchType.EAGER)

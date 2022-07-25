@@ -1,49 +1,48 @@
-package com.cloudofgoods.auth.configarations;
-
-import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.factory.PasswordEncoderFactories;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
-
-
-@Configuration
-@RequiredArgsConstructor
-public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
-
-    final UserDetailsService userDetailsService;
-
-    @Bean // New Spring versions we have to create authentication manager bean
-    public AuthenticationManager getAuthenticationManager() throws Exception {
-        System.out.println("TTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEe");
-        return super.authenticationManagerBean();
-    }
-
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
+//package com.cloudofgoods.auth.configarations;
 //
-//        http.authorizeRequests()
-//                .antMatchers("/customer","/")
-//                .permitAll();
+//import lombok.RequiredArgsConstructor;
+//import org.springframework.context.annotation.Bean;
+//import org.springframework.context.annotation.Configuration;
+//import org.springframework.security.authentication.AuthenticationManager;
+//import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+//import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+//import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+//import org.springframework.security.core.userdetails.UserDetailsService;
+//import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+//import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+//
+//
+//@Configuration
+//@RequiredArgsConstructor
+//public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
+//
+//    final UserDetailsService userDetailsService;
+//    @Bean("cogAuthManager")
+//     // New Spring versions we have to create authentication manager bean
+//    public AuthenticationManager getAuthenticationManager() throws Exception {
+//        return super.authenticationManagerBean();
 //    }
-
-
-    @Bean
-    PasswordEncoder passwordEncoder() {
-
-        System.out.println("UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
-        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
-    }
-
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
-        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
-    }
-}
+//
+////    @Override
+////    protected void configure(HttpSecurity http) throws Exception {
+////
+////        http.authorizeRequests()
+////                .antMatchers("/customer","/")
+////                .permitAll();
+////    }
+//
+//
+//    @Bean
+//    PasswordEncoder passwordEncoder() {
+//
+//        System.out.println("UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
+//        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
+//    }
+//
+//    @Override
+//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//        System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+//        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+//    }
+//}

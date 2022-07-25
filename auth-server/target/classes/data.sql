@@ -59,3 +59,7 @@ INSERT INTO role_user (ROLE_ID, USER_ID)
 VALUES
     (1, 1) /* 1st-admin */,
     (2, 2) /* 2nd-operator */ ;
+
+UPDATE hibernate_sequence
+SET next_val = 7
+where next_val = 1;

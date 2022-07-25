@@ -8,16 +8,22 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="user-service" />
-        <module name="ui-test" />
-        <module name="customer-save" />
         <module name="auth-server" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="customer" target="1.8" />
+      <module name="customer-save" target="1.8" />
+      <module name="discovery-service" target="1.8" />
+      <module name="ui-test" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="auth-server" options="-parameters" />
+      <module name="customer" options="-parameters" />
       <module name="customer-save" options="-parameters" />
+      <module name="discovery-service" options="-parameters" />
       <module name="ui-test" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>
