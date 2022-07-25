@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.security.Principal;
+import java.util.List;
 
 @RestController
 public class UserController {
@@ -53,8 +54,9 @@ public class UserController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/greeting")
     @ResponseStatus(HttpStatus.OK)
-    public String revokeToken(HttpServletRequest request) {
-       return "done";
+    public List<User> revokeToken(HttpServletRequest request) {
+        System.out.println("RRRRRRRRRRRRRRRRRRRRRRRRRRRR SSSSSSSS");
+        return userDetailService.findAllUsers();
     }
 
 }

@@ -8,6 +8,15 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 @Configuration
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
+    private static final String[] AUTH_WHITELIST = {
+            "/authenticate",
+            "/swagger-resources/**",
+            "/swagger-ui/**",
+            "/v3/api-docs",
+            "/webjars/**",
+            "/"
+
+    };
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/services/customer");
@@ -16,7 +25,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http.authorizeRequests()
-                .antMatchers("/customer","/")
+                .antMatchers(AUTH_WHITELIST)
                 .permitAll();
     }
 

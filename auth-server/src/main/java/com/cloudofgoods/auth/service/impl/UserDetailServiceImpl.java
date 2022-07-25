@@ -14,6 +14,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service("userDetailsService")
@@ -43,6 +44,11 @@ public class UserDetailServiceImpl implements UserDetailsService , UserDetailSer
 //            user.setRoles(role1);
 //        }
         return userDetailRepository.save(user);
+    }
+
+    @Override
+    public List<User> findAllUsers() {
+        return userDetailRepository.findAll();
     }
 
     @Override

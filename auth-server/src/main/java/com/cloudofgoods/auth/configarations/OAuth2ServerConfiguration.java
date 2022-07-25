@@ -40,7 +40,11 @@ public class OAuth2ServerConfiguration {
         public void configure(HttpSecurity http) throws Exception {
             http.authorizeRequests()
                     .antMatchers("/registration/**").permitAll()
-                    .anyRequest().fullyAuthenticated();
+//                    .antMatchers("/swagger-ui/**").permitAll()
+//                    .antMatchers("/getUser/**").permitAll()
+                    .anyRequest().
+//                    permitAll();
+                    fullyAuthenticated();
         }
 
 
