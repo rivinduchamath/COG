@@ -9,12 +9,11 @@ import java.util.Collection;
 import java.util.List;
 
 
-public class AuthUserDetail extends User implements UserDetails, SuperEntity{
+public class AuthUserDetail extends User implements UserDetails, SuperEntity {
 
     public AuthUserDetail(User user) {
         super(user);
     }
-
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

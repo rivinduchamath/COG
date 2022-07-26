@@ -2,7 +2,7 @@ package com.cloudofgoods.auth.service.impl;
 
 import com.cloudofgoods.auth.entity.Permission;
 import com.cloudofgoods.auth.entity.Role;
-import com.cloudofgoods.auth.repository.RoleDetailsRepository;
+import com.cloudofgoods.auth.dao.RoleDetailsRepository;
 import com.cloudofgoods.auth.service.RoleDetailsService;
 
 import org.springframework.beans.factory.annotation.Autowired;

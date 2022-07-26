@@ -1,4 +1,4 @@
-package com.cloudofgoods.auth.configarations;
+package com.cloudofgoods.usersservice.Configaration;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -39,13 +39,15 @@ public class OAuth2ServerConfiguration {
         @Override
         public void configure(HttpSecurity http) throws Exception {
             http.authorizeRequests().antMatchers(AUTH_WHITELIST).permitAll()
+//                    .antMatchers("/getUser/**").permitAll()
                     .anyRequest().
-                 fullyAuthenticated();
+//            // permitAll();
+        fullyAuthenticated();
         }
 
 
     }
-     static final String[] AUTH_WHITELIST = {
+    static final String[] AUTH_WHITELIST = {
             "/registration/**",
             "/authenticate",
             "/swagger-resources/**",
@@ -54,57 +56,5 @@ public class OAuth2ServerConfiguration {
             "/webjars/**",
 
     };
-    @Configuration
-    @EnableAuthorizationServer
-    protected static class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
-        private final PasswordEncoder passwordEncoder;
-        private final DataSource dataSource;
-        private final AuthenticationManager authenticationManager;
-
-
-        public AuthorizationServerConfiguration(@Qualifier("cogAuthManager") AuthenticationManager authenticationManager, DataSource dataSource, PasswordEncoder passwordEncoder) {
-            this.authenticationManager = authenticationManager;
-            this.dataSource = dataSource;
-            this.passwordEncoder = passwordEncoder;
-        }
-
-        @Bean
-        TokenStore tokenStore() {
-            return new JdbcTokenStore(dataSource);
-        }
-
-        @Override
-        public void configure(AuthorizationServerEndpointsConfigurer endpoints)  {
-            endpoints
-                    // Here you can override the default endpoints mappings
-                    .pathMapping("/oauth/check_token", "/api/v1/authorize")
-                    .pathMapping("/oauth/token", "/api/v1/token")
-
-                    // rest of the authorization server customization
-                    .authenticationManager(authenticationManager)
-                    .tokenStore(tokenStore());
-        }
-
-
-        @Override
-        public void configure(AuthorizationServerSecurityConfigurer security)  {
-            security.checkTokenAccess("isAuthenticated()").tokenKeyAccess("permitAll()");
-        }
-
-        @Override
-        public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-            clients.jdbc(dataSource).passwordEncoder(passwordEncoder);
-        }
-
-        @Bean
-        @Primary
-        public DefaultTokenServices tokenServices() {
-            DefaultTokenServices tokenServices = new DefaultTokenServices();
-            tokenServices.setSupportRefreshToken(true);
-            tokenServices.setTokenStore(tokenStore());
-            return tokenServices;
-        }
-
-    }
 
 }

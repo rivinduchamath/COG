@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ClientController {
 
-
     @RequestMapping(value = "/registration/client", method = RequestMethod.POST)
     public String registerClient(){
         return "register done";

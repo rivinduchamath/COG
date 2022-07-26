@@ -26,12 +26,12 @@ public class UsersController {
     final RestTemplate restTemplate;
     final UsersService customerService;
 
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/s",method = RequestMethod.GET)
     public String loadUI() {
         return "home";
     }
 
-    @RequestMapping(value = "/secure")
+    @RequestMapping(value = "/secure",method = RequestMethod.GET)
     public String loadSecuredUI() {
         return "secure";
     }

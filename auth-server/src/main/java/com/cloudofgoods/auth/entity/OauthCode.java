@@ -15,7 +15,6 @@ public class OauthCode implements SuperEntity {
     @Id
     @Column(name = "code")
     private String code;
-
     @Column(name = "authentication")
     private Long authentication;
 

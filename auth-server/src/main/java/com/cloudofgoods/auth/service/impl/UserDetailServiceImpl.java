@@ -1,9 +1,9 @@
 package com.cloudofgoods.auth.service.impl;
 
 import com.cloudofgoods.auth.entity.*;
-import com.cloudofgoods.auth.repository.PermissionDetailsRepository;
-import com.cloudofgoods.auth.repository.RoleDetailsRepository;
-import com.cloudofgoods.auth.repository.dao.UserDetailRepository;
+import com.cloudofgoods.auth.dao.PermissionDetailsRepository;
+import com.cloudofgoods.auth.dao.RoleDetailsRepository;
+import com.cloudofgoods.auth.dao.UserDetailRepository;
 import com.cloudofgoods.auth.service.UserDetailService;
 import lombok.RequiredArgsConstructor;
 import org.json.JSONException;
@@ -24,10 +24,9 @@ import java.util.Optional;
 public class UserDetailServiceImpl implements UserDetailsService, UserDetailService {
     private final UserDetailRepository userDetailRepository;
     private final PermissionDetailsRepository permissionDetailsRepository;
-    @Autowired
-    private PasswordEncoder passwordEncoder;
-    @Autowired
-    private RoleDetailsRepository roleDetailRepository;
+
+    private final PasswordEncoder passwordEncoder;
+    private final RoleDetailsRepository roleDetailRepository;
 
     @Override
     public User registerUser(String username, String password, String email) {
@@ -40,11 +39,6 @@ public class UserDetailServiceImpl implements UserDetailsService, UserDetailServ
         user.setAccountNonLocked(true);
         user.setCredentialsNonExpired(true);
 
-//        Optional<Role> byId = roleDetailRepository.findById(Role.ROLE_user);
-//        if(byId.isPresent()){
-//            Role role1 = byId.get();
-//            user.setRoles(role1);
-//        }
         return userDetailRepository.save(user);
     }
 

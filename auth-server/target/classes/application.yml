@@ -1,6 +1,9 @@
 server:
   port: 9191
-
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
 spring:
   # DATABASE CONFIGURATIONS
   datasource:
