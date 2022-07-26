@@ -5,6 +5,7 @@ import com.cloudofgoods.auth.dto.CustomUserRoleDTO;
 import com.cloudofgoods.auth.entity.Role;
 import com.cloudofgoods.auth.entity.User;
 import com.cloudofgoods.auth.model.request.UserRegister;
+import com.cloudofgoods.auth.service.RoleDetailsService;
 import com.cloudofgoods.auth.service.UserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,6 +23,9 @@ public class UserController {
 
     @Autowired
     private UserDetailService userDetailService;
+
+    @Autowired
+    private RoleDetailsService roleDetailsService;
 
     @RequestMapping(value = "/registration/users", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
@@ -49,8 +53,10 @@ public class UserController {
     public User removeRoleFromUser(@RequestBody CustomUserRoleDTO customUserRole) {
         return userDetailService.removeRoleFromUser(customUserRole.getUserName(),customUserRole.getRole());
     }
-    public void assignPermissionToUser() {
-
+    @RequestMapping(method = RequestMethod.POST, value = "/assignPermission")
+    @ResponseStatus(HttpStatus.OK)
+    public Role assignPermissionToRole(@RequestBody CustomRolePermissionDTO customRolePermission) {
+     return roleDetailsService.assignPermissionToRole(customRolePermission.getRoleName(),customRolePermission.getPermission());
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/removePermission")
@@ -61,7 +67,7 @@ public class UserController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/greeting")
     @ResponseStatus(HttpStatus.OK)
-    public List<User> revokeToken(HttpServletRequest request) {
+    public List<User> revokeToken() {
         return userDetailService.findAllUsers();
     }
 

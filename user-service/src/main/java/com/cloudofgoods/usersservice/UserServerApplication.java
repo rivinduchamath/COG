@@ -1,6 +1,5 @@
 package com.cloudofgoods.usersservice;
 
-import com.cloudofgoods.usersservice.Configaration.RentProcessTaskRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -16,10 +15,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @EnableTask
 public class UserServerApplication  {
-    @Bean
-    RentProcessTaskRunner getRentProcessTaskRunner() {
-        return new RentProcessTaskRunner();
-    }
+//    @Bean
+//    RentProcessTaskRunner getRentProcessTaskRunner() {
+//        return new RentProcessTaskRunner();
+//    }
 
     public static void main(String[] args) {
         SpringApplication.run(UserServerApplication .class, args);

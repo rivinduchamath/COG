@@ -15,9 +15,6 @@ import org.springframework.web.client.RestTemplate;
 
 
 
-import spark.Request;
-import spark.Response;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.PathParam;
 import java.security.Principal;
@@ -70,6 +67,16 @@ public class UsersController {
         String code = request.getHeader("Authorization");
         String contentType = request.getHeader("Content-Type");
         return customerService.fetchAllProfiles(code,contentType);
+    }
+
+    @RequestMapping(value = "/accountLockUser", method = RequestMethod.GET)
+    @PreAuthorize("hasRole('ROLE_admin')")
+    public List<User> accountLockUser(HttpServletRequest request) throws UnirestException {
+
+        String code = request.getHeader("Authorization");
+        String contentType = request.getHeader("Content-Type");
+        String userName = request.getHeader("UserName");
+        return customerService.accountLockUser(userName,code,contentType);
     }
 
 

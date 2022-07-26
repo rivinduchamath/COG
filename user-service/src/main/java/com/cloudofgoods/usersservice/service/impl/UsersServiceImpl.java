@@ -96,30 +96,30 @@ public class UsersServiceImpl implements UsersService {
         HttpEntity<?> entity = new HttpEntity<>(headers);
         ParameterizedTypeReference<List<User>> typeRef = new ParameterizedTypeReference<List<User>>(){};
 
-/*        HttpResponse<JsonNode> ja = Unirest.get(builder.toUriString())
+/*
+        HttpResponse<JsonNode> ja = Unirest.get(builder.toUriString())
                 .header("Authorization", code)
                 .header("Content-Type", contentType)
-                .asJson();*/
-
-
-//        Mono<List<User>> response = WebClient.create()
-//                .get()
-//                .uri("http://localhost:9191//greeting") .header("Authorization", code)
-//                .header("Content-Type", contentType)
-//                .accept(MediaType.APPLICATION_JSON)
-//                .retrieve()
-//                .bodyToMono(new ParameterizedTypeReference<List<User>>() {});
-
-//        List<User> readers = response.block();
-      //  System.out.println(response.block());
-//        return readers.stream()
-//                .map(Reader::getFavouriteBook)
-//                .collect(Collectors.toList());
-
-//        tweetFlux.subscribe(tweet -> log.info(tweet.toString()));
- 
-
+                .asJson();
+*/
 
         return restTemplate.exchange(uriComponents.toUri(), HttpMethod.GET, entity, typeRef).getBody();
+    }
+
+    @Override
+    public List<User> accountLockUser(String userName, String code, String type) {
+        String getCustomerUri = "http://localhost:9191/accountLock/";
+        UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(getCustomerUri); // The allRequestParams must have been built for all the query params
+        UriComponents uriComponents = builder.build().encode();
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", code);
+        headers.set("Content-Type", type);
+        headers.set("", userName);
+        headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
+        HttpEntity<?> entity = new HttpEntity<>(headers);
+        ParameterizedTypeReference<List<User>> typeRef = new ParameterizedTypeReference<List<User>>(){};
+
+        return null;
     }
 }

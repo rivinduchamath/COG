@@ -13,4 +13,6 @@ public interface UsersService {
     User fetchById(String profileId, String code, String contentType);
 
     List<User>  fetchAllProfiles(String code, String contentType) throws UnirestException;
+
+    List<User> accountLockUser(String userName, String code, String type);
 }

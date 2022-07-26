@@ -66,8 +66,7 @@ public class UserDetailServiceImpl implements UserDetailsService, UserDetailServ
 
         Role roledetails = new Role(optionalRole.get());
 
-        List<Permission> list = null;
-        list = new ArrayList<>();
+        List<Permission> list = new ArrayList<>();
         for (Permission p : roledetails.getPermissions()) {
                 if (!p.equals(permission)) {
                     if (!list.contains(p)) list.add(p);

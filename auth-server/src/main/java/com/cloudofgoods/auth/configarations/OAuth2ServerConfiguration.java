@@ -45,8 +45,8 @@ public class OAuth2ServerConfiguration {
                     .antMatchers("/v2/api-docs/**").permitAll()
 //                    .antMatchers("/getUser/**").permitAll()
                     .anyRequest().
-                    permitAll();
-               //     fullyAuthenticated();
+            // permitAll();
+                 fullyAuthenticated();
         }
 
 

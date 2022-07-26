@@ -21,7 +21,7 @@ public class Role implements SuperEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @Column(name = "name")
+    @Column(name = "name" ,unique = true)
     private String name;
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "permission_role", joinColumns = {
