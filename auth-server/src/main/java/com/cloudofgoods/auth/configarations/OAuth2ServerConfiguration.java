@@ -38,20 +38,24 @@ public class OAuth2ServerConfiguration {
 
         @Override
         public void configure(HttpSecurity http) throws Exception {
-            http.cors().and().csrf().disable().authorizeRequests()
-                    .antMatchers("/registration/**").permitAll()
-                    .antMatchers("/swagger-ui/**").permitAll()
-                    .antMatchers("/swagger-ui.html/**").permitAll()
-                    .antMatchers("/v2/api-docs/**").permitAll()
+            http.authorizeRequests().antMatchers(AUTH_WHITELIST).permitAll();
 //                    .antMatchers("/getUser/**").permitAll()
-                    .anyRequest().
-            // permitAll();
-                 fullyAuthenticated();
+//                    .anyRequest().
+//            // permitAll();
+//                 fullyAuthenticated();
         }
 
 
     }
+     static final String[] AUTH_WHITELIST = {
+            "/registration/**",
+            "/authenticate",
+            "/swagger-resources/**",
+            "/swagger-ui/**",
+            "/v3/api-docs",
+            "/webjars/**",
 
+    };
     @Configuration
     @EnableAuthorizationServer
     protected static class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {

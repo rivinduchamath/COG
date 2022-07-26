@@ -34,8 +34,6 @@ public class UsersServiceImpl implements UsersService {
 
     final RestTemplate restTemplate;
 
-
-
     final UsersRepository usersRepository;
 
     @Override

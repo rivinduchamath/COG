@@ -8,7 +8,6 @@ import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import lombok.RequiredArgsConstructor;
 
-import org.springframework.http.HttpRequest;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -16,7 +15,6 @@ import org.springframework.web.client.RestTemplate;
 
 
 import javax.servlet.http.HttpServletRequest;
-import javax.ws.rs.PathParam;
 import java.security.Principal;
 import java.util.List;
 

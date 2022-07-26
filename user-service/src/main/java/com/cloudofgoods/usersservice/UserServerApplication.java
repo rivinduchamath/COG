@@ -10,7 +10,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@EnableResourceServer
+//@EnableResourceServer
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableSwagger2
 @EnableTask

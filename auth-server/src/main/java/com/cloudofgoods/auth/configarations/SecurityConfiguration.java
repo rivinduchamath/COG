@@ -24,7 +24,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         //configure your path here
-        http.csrf().disable();
+        http.authorizeRequests().antMatchers(OAuth2ServerConfiguration.AUTH_WHITELIST).permitAll();
+
     }
 
     @Bean
