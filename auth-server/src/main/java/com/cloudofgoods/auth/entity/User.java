@@ -17,7 +17,7 @@ public class User implements SuperEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(name = "email")
+    @Column(name = "email", unique = true)
     private String username;
     @Column(name = "password",length = 1000)
     private String password;
@@ -37,6 +37,7 @@ public class User implements SuperEntity {
     private List<Role> roles;
 
     public User(User user) {
+        this.id = user.getId();
         this.username = user.getUsername();
         this.password = user.getPassword();
         this.enabled = user.isEnabled();
@@ -45,7 +46,5 @@ public class User implements SuperEntity {
         this.accountNonLocked = user.isAccountNonLocked();
         this.roles = user.getRoles();
     }
-    public void setRoles(Role roles) {
-        this.roles.add(roles);
-    }
+
 }

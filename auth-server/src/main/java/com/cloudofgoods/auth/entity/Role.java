@@ -30,4 +30,14 @@ public class Role implements SuperEntity {
     private List<Permission> permissions;
 
 
+    public Role(Role role) {
+        this.id= role.getId();
+        this.name = role.getName();
+        this.permissions= role.getPermissions();
+    }
+
+    public Role(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }

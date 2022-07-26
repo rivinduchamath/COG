@@ -38,13 +38,15 @@ public class OAuth2ServerConfiguration {
 
         @Override
         public void configure(HttpSecurity http) throws Exception {
-            http.authorizeRequests()
+            http.cors().and().csrf().disable().authorizeRequests()
                     .antMatchers("/registration/**").permitAll()
-//                    .antMatchers("/swagger-ui/**").permitAll()
+                    .antMatchers("/swagger-ui/**").permitAll()
+                    .antMatchers("/swagger-ui.html/**").permitAll()
+                    .antMatchers("/v2/api-docs/**").permitAll()
 //                    .antMatchers("/getUser/**").permitAll()
                     .anyRequest().
-//                    permitAll();
-                    fullyAuthenticated();
+                    permitAll();
+               //     fullyAuthenticated();
         }
 
 

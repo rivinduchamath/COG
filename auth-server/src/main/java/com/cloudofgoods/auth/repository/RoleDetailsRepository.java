@@ -4,6 +4,9 @@ package com.cloudofgoods.auth.repository;
 import com.cloudofgoods.auth.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.Optional;
+
 public interface RoleDetailsRepository extends JpaRepository<Role,Integer> {
 
+    Optional<Role> findRoleByName(String userName);
 }

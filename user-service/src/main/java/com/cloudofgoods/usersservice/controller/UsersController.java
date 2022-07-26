@@ -19,6 +19,7 @@ import spark.Request;
 import spark.Response;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.PathParam;
 import java.security.Principal;
 import java.util.List;
 
@@ -40,6 +41,7 @@ public class UsersController {
         return "secure";
     }
 
+    //Save User With Credentials
     @RequestMapping(value = "/profile", method = RequestMethod.POST)
     @PreAuthorize("hasAuthority('create_profile')")
     public User save(@RequestBody User users) {
@@ -52,10 +54,13 @@ public class UsersController {
     }
 
 
-    @RequestMapping(value = "/profile", method = RequestMethod.GET)
+    @RequestMapping(value = "/getprofile/{username}", method = RequestMethod.GET)
     @PreAuthorize("hasAuthority('read_profile')")
-    public User fetch(@RequestParam(value ="id") Long profileId) {
-        return customerService.fetchById(profileId);
+    public User fetch(@PathVariable(name ="username" ,required = false) String username, HttpServletRequest request,Principal principal) {
+//        String loggedUser = principal.getName();
+        String code = request.getHeader("Authorization");
+        String contentType = request.getHeader("Content-Type");
+        return customerService.fetchById(username,code,contentType);
     }
 
     @RequestMapping(value = "/profiles", method = RequestMethod.GET)
