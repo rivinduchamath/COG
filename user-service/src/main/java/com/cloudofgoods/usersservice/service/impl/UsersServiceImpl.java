@@ -115,11 +115,11 @@ public class UsersServiceImpl implements UsersService {
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", code);
         headers.set("Content-Type", type);
-        headers.set("", userName);
+        headers.set("UserName", userName);
         headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
         HttpEntity<?> entity = new HttpEntity<>(headers);
         ParameterizedTypeReference<List<User>> typeRef = new ParameterizedTypeReference<List<User>>(){};
 
-        return null;
+        return restTemplate.exchange(uriComponents.toUri(), HttpMethod.GET, entity, typeRef).getBody();
     }
 }

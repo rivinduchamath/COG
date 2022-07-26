@@ -11,6 +11,7 @@
         <set>
           <option value="profileId" />
           <option value="userName" />
+          <option value="UserName" />
         </set>
       </option>
     </inspection_tool>

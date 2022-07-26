@@ -36,9 +36,10 @@ public class UserController {
         return user;
     }
 
-    @RequestMapping(value = "/accountLock/{userName}", method = RequestMethod.GET)
+    @RequestMapping(value = "/accountLock", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
-    public User lockUserAccount(@PathVariable(name ="userName") String userName) {
+    public User lockUserAccount(HttpServletRequest request) {
+        String userName = request.getHeader("UserName");
     return userDetailService.lockUserAccount(userName);
     }
 
