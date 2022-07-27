@@ -10,7 +10,7 @@ import java.util.List;
 ;
 
 @Entity
-@Table(name = "role")
+@Table(name = "auth_role")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

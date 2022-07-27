@@ -1,6 +1,6 @@
 package com.cloudofgoods.usersservice.service;
 
-import com.cloudofgoods.usersservice.entity.User;
+import com.cloudofgoods.usersservice.model.User;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
 import java.util.List;

@@ -1,5 +1,6 @@
-package com.cloudofgoods.usersservice.entity;
+package com.cloudofgoods.usersservice.model;
 
+import com.cloudofgoods.usersservice.entity.SuperEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,14 +10,12 @@ import java.util.List;
 
 ;
 
-@Entity
 @Table(name = "role")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Role implements SuperEntity {
 
-    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column(name = "name")

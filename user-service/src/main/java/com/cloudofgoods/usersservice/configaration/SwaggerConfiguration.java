@@ -1,4 +1,4 @@
-package com.cloudofgoods.usersservice.Configaration;
+package com.cloudofgoods.usersservice.configaration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

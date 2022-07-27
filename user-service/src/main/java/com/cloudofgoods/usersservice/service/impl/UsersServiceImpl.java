@@ -1,24 +1,20 @@
 package com.cloudofgoods.usersservice.service.impl;
 
 
-import com.cloudofgoods.usersservice.entity.User;
+import com.cloudofgoods.usersservice.model.User;
 import com.cloudofgoods.usersservice.model.request.UserRegister;
-import com.cloudofgoods.usersservice.repository.UsersRepository;
+
 import com.cloudofgoods.usersservice.service.UsersService;
 
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.annotation.Bean;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponents;
@@ -34,7 +30,7 @@ public class UsersServiceImpl implements UsersService {
 
     final RestTemplate restTemplate;
 
-    final UsersRepository usersRepository;
+
 
     @Override
     public User save(User customer) {
@@ -54,13 +50,7 @@ public class UsersServiceImpl implements UsersService {
 
         return restTemplate.exchange(uriComponents.toUri(), HttpMethod.POST,entity,responseType).getBody();
     }
-    @Bean
-    public MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter() {
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
-        MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter(mapper);
-        return converter;
-    }
+
     @Override
     public User fetchById(String userName, String code, String contentType) {
         String getCustomerUri = "http://localhost:9191/getuser";

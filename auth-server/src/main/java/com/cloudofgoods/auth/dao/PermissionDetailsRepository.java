@@ -8,4 +8,6 @@ import java.util.Optional;
 public interface PermissionDetailsRepository extends JpaRepository<Permission,Integer> {
 
     Optional<Permission> findPermissionByName(String permission);
+
+    boolean deletePermissionById(Integer permissionId);
 }

@@ -1,10 +1,8 @@
 package com.cloudofgoods.usersservice.controller;
 
 
-import com.cloudofgoods.usersservice.entity.User;
+import com.cloudofgoods.usersservice.model.User;
 import com.cloudofgoods.usersservice.service.UsersService;
-import com.mashape.unirest.http.HttpResponse;
-import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import lombok.RequiredArgsConstructor;
 
@@ -45,6 +43,8 @@ public class UsersController {
 
     @RequestMapping(value = "/customer", method = RequestMethod.POST)
     public User saveCustomer(@RequestBody User users) {
+
+        System.out.println("RRRRRRRRRRRRFFFFFFFFFFFFFFFFFfff");
         return customerService.save(users);
     }
 
