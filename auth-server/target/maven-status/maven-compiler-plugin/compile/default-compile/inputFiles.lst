@@ -1,6 +1,7 @@
-/home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/repository/PermissionDetailsRepository.java
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/service/impl/ClientDetailsServiceImpl.java
+/home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/dao/RoleDetailsRepository.java
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/entity/Role.java
+/home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/dao/PermissionDetailsRepository.java
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/controller/ClientController.java
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/entity/OauthApprovals.java
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/model/request/UserRegister.java
@@ -8,14 +9,15 @@
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/AuthServerApplication.java
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/entity/CustomUserDetails.java
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/controller/RoleController.java
+/home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/dao/UserDetailRepository.java
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/dto/CustomUserRoleDTO.java
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/model/validator/PasswordMatches.java
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/entity/OauRefreshToken.java
-/home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/repository/RoleDetailsRepository.java
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/entity/OauthAccessToken.java
-/home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/repository/ClientDetailsRepository.java
+/home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/dto/ClientDTO.java
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/service/RoleDetailsService.java
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/model/validator/ValidEmail.java
+/home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/dao/ClientDetailsRepository.java
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/entity/AuthUserDetail.java
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/model/validator/PasswordValidator.java
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/service/ClientDetailService.java
@@ -25,8 +27,8 @@
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/entity/Permission.java
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/service/impl/PermissionDetailsServiceImpl.java
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/service/impl/RoleDetailsServiceImpl.java
-/home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/repository/UserDetailRepository.java
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/entity/OauthCode.java
+/home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/configarations/OrganizationSubClaimAdapter.java
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/configarations/SwaggerConfiguration.java
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/controller/UserController.java
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/entity/User.java
@@ -38,4 +40,3 @@
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/model/validator/ValidPassword.java
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/model/validator/PasswordMatchesValidator.java
 /home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/entity/OauthClientDetails.java
-/home/rivindu/IdeaProjects/cogfinals/auth-server/src/main/java/com/cloudofgoods/auth/repository/dao/UserDetailRepository.java

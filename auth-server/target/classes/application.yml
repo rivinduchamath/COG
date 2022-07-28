@@ -4,6 +4,8 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
+  servlet:
+    context-path: /jwt-resource-server
 spring:
   # DATABASE CONFIGURATIONS
   datasource:

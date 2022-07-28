@@ -1,6 +1,5 @@
 com/cloudofgoods/auth/service/impl/PermissionDetailsServiceImpl.class
 com/cloudofgoods/auth/service/RoleDetailsService.class
-com/cloudofgoods/auth/repository/dao/UserDetailRepository.class
 com/cloudofgoods/auth/entity/AuthUserDetail.class
 com/cloudofgoods/auth/configarations/SwaggerConfiguration.class
 com/cloudofgoods/auth/entity/OauthClientDetails.class
@@ -16,20 +15,21 @@ com/cloudofgoods/auth/service/ClientDetailService.class
 com/cloudofgoods/auth/entity/OauRefreshToken.class
 com/cloudofgoods/auth/controller/PermissionController.class
 com/cloudofgoods/auth/entity/OauthCode.class
-com/cloudofgoods/auth/repository/ClientDetailsRepository.class
 com/cloudofgoods/auth/model/validator/ValidPassword.class
 com/cloudofgoods/auth/AuthServerApplication.class
 com/cloudofgoods/auth/model/validator/PasswordValidator.class
+com/cloudofgoods/auth/dao/UserDetailRepository.class
 com/cloudofgoods/auth/entity/CustomUserDetails.class
 com/cloudofgoods/auth/dto/CustomUserRoleDTO.class
 com/cloudofgoods/auth/configarations/OAuth2ServerConfiguration$AuthorizationServerConfiguration.class
 com/cloudofgoods/auth/entity/User.class
+com/cloudofgoods/auth/dao/RoleDetailsRepository.class
 com/cloudofgoods/auth/entity/Role.class
 com/cloudofgoods/auth/service/UserDetailService.class
+com/cloudofgoods/auth/dao/ClientDetailsRepository.class
 com/cloudofgoods/auth/model/validator/PasswordMatchesValidator.class
 com/cloudofgoods/auth/configarations/SecurityConfiguration.class
-com/cloudofgoods/auth/repository/PermissionDetailsRepository.class
-com/cloudofgoods/auth/repository/RoleDetailsRepository.class
+com/cloudofgoods/auth/dto/ClientDTO.class
 com/cloudofgoods/auth/model/request/UserRegister.class
 com/cloudofgoods/auth/controller/UserController.class
 com/cloudofgoods/auth/configarations/OAuth2ServerConfiguration$ResourceServerConfiguration.class
@@ -40,3 +40,5 @@ com/cloudofgoods/auth/service/impl/ClientDetailsServiceImpl.class
 com/cloudofgoods/auth/model/validator/ValidEmail.class
 com/cloudofgoods/auth/controller/RoleController.class
 com/cloudofgoods/auth/entity/OauthClientToken.class
+com/cloudofgoods/auth/configarations/OrganizationSubClaimAdapter.class
+com/cloudofgoods/auth/dao/PermissionDetailsRepository.class
